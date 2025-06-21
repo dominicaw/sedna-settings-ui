@@ -1,0 +1,47 @@
+export default function DefaultGridIcon() {
+  return (
+    <svg viewBox='0 0 24 24' width='100%' height='100%'>
+      <rect
+        x='2'
+        y='2'
+        width='20'
+        height='20'
+        fill='none'
+        stroke='currentColor'
+        strokeWidth='3'
+      />
+      <line
+        x1='9'
+        y1='2'
+        x2='9'
+        y2='22'
+        stroke='currentColor'
+        strokeWidth='1'
+      />
+      <line
+        x1='15'
+        y1='2'
+        x2='15'
+        y2='22'
+        stroke='currentColor'
+        strokeWidth='1'
+      />
+      <line
+        x1='2'
+        y1='9'
+        x2='22'
+        y2='9'
+        stroke='currentColor'
+        strokeWidth='1'
+      />
+      <line
+        x1='2'
+        y1='15'
+        x2='22'
+        y2='15'
+        stroke='currentColor'
+        strokeWidth='1'
+      />
+    </svg>
+  )
+}
