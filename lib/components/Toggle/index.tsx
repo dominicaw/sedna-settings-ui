@@ -6,9 +6,14 @@ import DefaultGridIcon from './icons/DefaultGridIcon'
 type ToggleProps = {
   gridIcon?: React.ReactNode
   listIcon?: React.ReactNode
+  size?: 'small' | 'medium' | 'large'
 }
 
-export default function Toggle({ gridIcon, listIcon }: ToggleProps) {
+export default function Toggle({
+  gridIcon,
+  listIcon,
+  size = 'medium',
+}: ToggleProps) {
   const [isActive, setIsActive] = useState(false)
 
   function handleToggle() {
@@ -17,7 +22,8 @@ export default function Toggle({ gridIcon, listIcon }: ToggleProps) {
 
   return (
     <button
-      className={styles['toggle']}
+      className={`${styles['toggle']} ${styles[size]}`}
+      style={{ width: '50%' }}
       onClick={handleToggle}
       aria-pressed={isActive}
       tabIndex={0}

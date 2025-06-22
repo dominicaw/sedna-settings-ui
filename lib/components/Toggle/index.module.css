@@ -1,13 +1,20 @@
 .toggle {
+  --scale: 1;
+
+  --toggle-height: calc(3rem * var(--scale));
+  --icon-size: calc(1.5rem * var(--scale));
+  --circle-size: calc(2.5em * var(--scale));
+  --border-width: calc(0.4rem * var(--scale));
+  --border-radius: calc(2rem * var(--scale));
+
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 1rem;
   cursor: pointer;
   padding: 10px;
-  user-select: none;
-  font-family: sans-serif;
   background: transparent;
   border: none;
+  width: 100%;
 }
 
 .toggle:active,
@@ -17,45 +24,48 @@
 }
 
 .toggle:focus-visible {
-  outline: 2px solid white;
-  outline-offset: 2px;
+  outline: 0.2rem solid white;
+}
+
+.small {
+  --scale: 0.8;
+}
+
+.large {
+  --scale: 1.2;
 }
 
 .icon {
-  width: 24px;
-  height: 24px;
+  width: var(--icon-size);
+  height: var(--icon-size);
   color: #2067a6;
+  flex: 0 0 auto;
 }
 
 .icon.active {
   color: white;
 }
 
-.grid {
-  color: white;
-  font-size: 24px;
-}
-
 .slider {
   position: relative;
-  width: 100px;
-  height: 50px;
-  border-radius: 30px;
-  border: 6px solid white;
+  flex: 1 auto;
+  height: var(--toggle-height);
+  border-radius: var(--border-radius);
+  border: var(--border-width) solid white;
 }
 
 .circle {
   position: absolute;
   top: 50%;
-  left: 6px;
+  left: var(--border-width);
   transform: translateY(-50%);
-  width: 42px;
-  height: 42px;
+  width: var(--circle-size);
+  height: var(--circle-size);
   border-radius: 50%;
   background-color: white;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .slider.active .circle {
-  transform: translateX(calc(100% + 3px)) translateY(-50%);
+  left: calc(100% - var(--circle-size) - var(--border-width));
 }
