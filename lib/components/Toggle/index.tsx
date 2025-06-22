@@ -36,10 +36,7 @@ export default function Toggle({
         {listIcon ? listIcon : <DefaultListIcon />}
       </span>
 
-      <div
-        className={`${styles['slider']} ${isActive ? styles['active'] : ''}`}
-        aria-hidden='true'
-      >
+      <div className={styles['slider']} aria-hidden='true'>
         <div className={styles['circle']}></div>
       </div>
 
