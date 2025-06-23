@@ -1,5 +1,13 @@
 # Sedna Settings UI Component Library
 
+### Running the repo
+
+```
+npm run dev
+```
+
+This will also run `npm install`
+
 ### Why Vite?
 
 - Familiar build tool
